@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import './bootstrap.min.css';
 import Header from './components/Header';
+import NewExpense from './components/NewExpense';
 
 class App extends Component{
 
@@ -8,6 +9,12 @@ class App extends Component{
     return(
       <div className="container">
         <Header title="Expense Tracker App" />
+
+        <div className="row">
+          <div className="col-md-10 mx-auto">
+            <NewExpense />
+          </div>
+        </div>
 
       </div>
     );
