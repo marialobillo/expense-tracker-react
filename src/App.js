@@ -7,8 +7,10 @@ class App extends Component{
 
   render(){
     return(
-      <div className="container">
-        <Header title="Expense Tracker App" />
+      <div className="">
+        <div className="row">
+          <Header title="Expense Tracker App" />
+        </div>
 
         <div className="row">
           <div className="col-md-10 mx-auto">
@@ -16,6 +18,9 @@ class App extends Component{
           </div>
         </div>
 
+        <div className="row">
+
+        </div>
       </div>
     );
   }
