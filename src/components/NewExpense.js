@@ -25,19 +25,28 @@ class NewExpense extends Component{
         e.preventDefault();
 
         // get the state values
-        const { type, name, date, amount} = this.state.expense;
-
-        // early exist
-        if(type === '' || name === '' || date ==== '' || amount === ''){
+        const { type, name, date, amount } = this.state.expense;
+        
+        if(type === '' || name === '' || date === '' || amount === ''){
             return;
-        }        
-
+        }
         // generate an object 
         const newExpense = {...this.state.expense};
-        newEpense.id = Date.now();
+        newExpense.id = Date.now();
+    
 
-        // passing the info to the parent
+        //
         this.props.createNewExpense(newExpense);
+        // reset the form
+        this.setState({
+            expense:{
+                type: 'Choose one...',
+                name: '',
+                date: '',
+                amount: 0,
+            }
+        })
+
     }
     render(){
         return (
