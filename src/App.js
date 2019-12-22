@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import './bootstrap.min.css';
 import Header from './components/Header';
 import NewExpense from './components/NewExpense';
+import ExpenseList from './components/ExpenseList';
 
 class App extends Component{
   state = {
@@ -31,8 +32,8 @@ class App extends Component{
           </div>
         </div>
 
-        <div className="row">
-
+        <div className="mt-5 col-md-10 mx-auto">
+            <ExpenseList expenses={this.state.expenses}/>
         </div>
       </div>
     );
