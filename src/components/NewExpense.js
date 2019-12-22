@@ -11,7 +11,7 @@ class NewExpense extends Component{
     }
 
     handleChange = e => {
-        console.log(e.target.name + ': ' + e.target.value);
+        //console.log(e.target.name + ': ' + e.target.value);
 
         this.setState({
             expense : {
@@ -20,10 +20,29 @@ class NewExpense extends Component{
             }
         });
     } 
+
+    handleSubmit = e => {
+        e.preventDefault();
+
+        // get the state values
+        const { type, name, date, amount} = this.state.expense;
+
+        // early exist
+        if(type === '' || name === '' || date ==== '' || amount === ''){
+            return;
+        }        
+
+        // generate an object 
+        const newExpense = {...this.state.expense};
+        newEpense.id = Date.now();
+
+        // passing the info to the parent
+        this.props.createNewExpense(newExpense);
+    }
     render(){
         return (
             <div className="">
-                <form>
+                <form onSubmit={this.handleSubmit}>
                     <div className="form-group row">
                        
                             <label>Type:</label>
