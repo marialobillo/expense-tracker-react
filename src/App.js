@@ -9,6 +9,19 @@ class App extends Component{
     expenses: []
   }
 
+  deleteExpense = id => {
+    const currentExpenses = [...this.state.expenses];
+
+    const expenses = currentExpenses.filter(expense => {
+      return expense.id !== id;
+    });
+
+    // update the state
+    this.setState({
+      expenses
+    });
+  }
+
   createNewExpense = data => {
     console.log(data);
 
@@ -33,7 +46,10 @@ class App extends Component{
         </div>
 
         <div className="mt-5 col-md-10 mx-auto">
-            <ExpenseList expenses={this.state.expenses}/>
+            <ExpenseList 
+              expenses={this.state.expenses}
+              deleteExpense={this.deleteExpense}
+            />
         </div>
       </div>
     );

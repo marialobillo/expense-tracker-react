@@ -2,7 +2,7 @@ import React from 'react';
 import Expense from './Expense';
 
 
-const ExpenseList = ({ expenses }) => (
+const ExpenseList = ({ expenses, deleteExpense }) => (
     <div className="mt-2 py-5">
         <div className="card-body">
             <h2 className="card-title text-center"></h2>
@@ -24,6 +24,7 @@ const ExpenseList = ({ expenses }) => (
                         <Expense 
                             key={expense.id}
                             expense={expense}
+                            deleteExpense={deleteExpense}
                         />
                     ))}
                 </tbody>
