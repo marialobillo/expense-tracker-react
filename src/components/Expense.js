@@ -4,8 +4,8 @@ const Expense = ({ expense, deleteExpense }) => (
     <tr>
         <td>{expense.date}</td>
         <td>{expense.name}</td>
-        <td>{expense.amount}</td>
-        <td>${expense.type}</td>
+        <td>${expense.amount}</td>
+        <td>{expense.type}</td>
         <td>
             <button 
                 className="btn btn-danger"

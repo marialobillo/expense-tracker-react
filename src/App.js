@@ -9,6 +9,20 @@ class App extends Component{
     expenses: []
   }
 
+  // when the component is mounted
+  componentDidMount(){
+    const expenseslocalS = localStorage.getItem('expenses');
+    if(expenseslocalS){
+      this.setState({
+        expenses: JSON.parse(expenseslocalS)
+      });
+    }
+  }
+
+  componentDidUpdate(){
+    localStorage.setItem('expenses', JSON.stringify(this.state.expenses));
+  }
+
   deleteExpense = id => {
     const currentExpenses = [...this.state.expenses];
 
