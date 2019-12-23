@@ -52,6 +52,42 @@ class NewExpense extends Component{
         return (
             <div className="">
                 <form onSubmit={this.handleSubmit}>
+
+                    <div className="form-group row">
+                        <span>Date:</span>
+                        <input 
+                            className="form-control" 
+                            type="date" 
+                            name="date" 
+                            onChange={this.handleChange}
+                            value={this.state.expense.date}
+                        />
+                    </div>
+                    
+                    <div className="form-group row">
+                        <span>Description:</span>
+                        <input 
+                            className="form-control"
+                            placeholder="Expense Name" 
+                            type="text" 
+                            name="name"
+                            onChange={this.handleChange}
+                            value={this.state.expense.name}    
+                        />
+                    </div>
+
+                   
+                    <div className="form-group row">
+                        <span>Amount:</span>
+                        <input 
+                            className="form-control" 
+                            type="text" 
+                            placeholder="Expense Amount"
+                            name="amount" 
+                            onChange={this.handleChange}  
+                            value={this.state.expense.amount}  
+                        />
+                    </div>
                     <div className="form-group row">
                        
                             <label>Type:</label>
@@ -67,37 +103,6 @@ class NewExpense extends Component{
                             <option value="cryptocoin">Cryptocoin</option>
                             <option value="other">Other</option>
                         </select>
-                        <span>Name:</span>
-                        <input 
-                            className="form-control"
-                            placeholder="Expense Name" 
-                            type="text" 
-                            name="name"
-                            onChange={this.handleChange}
-                            value={this.state.expense.name}    
-                        />
-                    </div>
-
-                    <div className="form-group row">
-                        <span>Date:</span>
-                        <input 
-                            className="form-control" 
-                            type="date" 
-                            name="date" 
-                            onChange={this.handleChange}
-                            value={this.state.expense.date}
-                        />
-                    </div>
-                    <div className="form-group row">
-                        <span>Amount:</span>
-                        <input 
-                            className="form-control" 
-                            type="text" 
-                            placeholder="Expense Amount"
-                            name="amount" 
-                            onChange={this.handleChange}  
-                            value={this.state.expense.amount}  
-                        />
                     </div>
                     <button 
                         type="submit" 

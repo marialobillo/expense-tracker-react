@@ -18,10 +18,10 @@ const ExpenseList = ({ expenses, deleteExpense }) => {
             <table className="table">
                 <thead>
                     <tr>
-                        <th>Type</th>
-                        <th>Name</th>
                         <th>Date</th>
+                        <th>Description</th>
                         <th>Amount</th>
+                        <th>Type</th>
                         <th>Options</th>
                     </tr>
                 </thead>
